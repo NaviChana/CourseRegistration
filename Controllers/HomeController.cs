@@ -20,8 +20,20 @@ namespace CourseRegistration.Controllers
 
         public IActionResult Instructors()
         {
-            return View();
+            InstructorViewModel ivm = new InstructorViewModel();
+
+            List<DTO.Instructors> instructors = new List<DTO.Instructors>()
+            {
+                 new DTO.Instructors { InstructorId = 213, InstructorFirstName = "John", InstructorLastName = "Smith", InstructorEmail = "JSmith@KnightUniversity.com", CourseTaught = "Biology 101" },
+                 new DTO.Instructors { InstructorId = 235, InstructorFirstName = "Rebecca", InstructorLastName = "Hanson", InstructorEmail = "RHanson@KnightUniversity.com", CourseTaught = "Psychology 200" },
+                 new DTO.Instructors { InstructorId = 257, InstructorFirstName = "Stewart", InstructorLastName = "Johnson", InstructorEmail = "SJohnson@KnightUniversity.com", CourseTaught = "Accounting 318" },
+                 new DTO.Instructors { InstructorId = 279, InstructorFirstName = "Eric", InstructorLastName = "Hallow", InstructorEmail = "EHallow@KnightUniversity.com", CourseTaught = "English 104" },
+                 new DTO.Instructors { InstructorId = 290, InstructorFirstName = "Samantha", InstructorLastName = "Pearl", InstructorEmail = "SPearl@KnightUniversity.com", CourseTaught = "Finance 301" }
+            };
+            ivm.Instructors = instructors;
+            return View(ivm);
         }
+
 
         public IActionResult Students()
         {

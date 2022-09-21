@@ -6,7 +6,7 @@
         public string? InstructorFirstName { get; set; }
         public string? InstructorLastName { get; set; }
         public string? InstructorEmail { get; set; }
-        public string? Course { get; set; }
+        public string? CourseTaught { get; set; }
 
 
     }
