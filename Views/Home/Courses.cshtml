@@ -1,7 +1,42 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@{
     ViewData["Title"] = "Courses";
 }
-<h1>@ViewData["Title"]</h1>
+
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Courses </title>
+    <link rel="stylesheet" href="~/lib//bootstrap/dist/css/bootstrap-grid.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <h1></h1>
+    <div>
+        <table class="table table-bordered" >
+            <thead>
+                <tr>
+                    <th>Course ID</th>
+                    <th>Course Name</th>
+                    <th>Course Number</th>
+                    <th>Course Description</th>
+                    <th>Instructor ID</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in @Model.Courses)
+                {
+                    <tr>
+                        <td scope="row">@item.CourseId</td>
+                        <td><a id="CourseName" href="javascript:Details('@item.CourseName')">@item.CourseName</a></td>
+                        <td>@item.CourseNumber</td>
+                        <td>@item.CourseDescription</td>
+                        <td>@item.InstructorId</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

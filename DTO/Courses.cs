@@ -1,10 +1,14 @@
-﻿namespace CourseRegistration.DTO
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace CourseRegistration.DTO
 {
-    public class Courses
+    public partial class Courses
     {
-        public int CourseId { get; set; }
+        public string? CourseId { get; set; }
         public int CourseNumber { get; set; }
         public string? CourseName { get; set; }
         public string? CourseDescription { get; set; }
+
+        public int InstructorId { get; set; }
     }
 }
